@@ -61,11 +61,6 @@ h1 {
     background: #f9f9f9;
 }
 
-/* Footer Styles */
-footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #444;
-    color: #fff;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+.card-link {
+    text-decoration: none; /* Removes underlines */
 }
