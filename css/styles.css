@@ -23,7 +23,7 @@ h1 {
 
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 20px;
     padding: 20px;
     max-width: 1200px;
@@ -48,9 +48,9 @@ h1 {
 
 .card-image {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
-    background-color: #f4f4f4;
+    height: 150px; /* Ensures all previews are the same size */
+    object-fit: cover; /* Ensures images fit perfectly */
+    background-color: #f4f4f4; /* Fallback color if image doesn't load */
 }
 
 .card-caption {
@@ -61,6 +61,7 @@ h1 {
     background: #f9f9f9;
 }
 
+/* Footer Styles */
 footer {
     text-align: center;
     padding: 1rem;
