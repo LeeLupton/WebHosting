@@ -18,39 +18,39 @@
     <footer>
         <p>&copy; 2025 Your Name</p>
     </footer>
-<script>
-    // Static array of image filenames based on your folder
-    const images = [
-        "Defender.png",
-        "coke-beach-full.jpg",
-        "dar.png",
-        "darius-school.edited.png",
-        "darius.png",
-        "darius.webp",
-        "profile.webp"
-    ];
+    <script>
+        // Static array of image filenames
+        const images = [
+            "Defender.png",
+            "coke-beach-full.jpg",
+            "dar.png",
+            "darius-school.edited.png",
+            "darius.png",
+            "darius.webp",
+            "profile.webp"
+        ];
 
-    const gallery = document.querySelector('.gallery');
+        const gallery = document.querySelector('.gallery');
 
-    // Dynamically load images into the gallery
-    images.forEach((image) => {
-        const card = document.createElement('div');
-        card.classList.add('card');
+        // Dynamically load images into the gallery
+        images.forEach((image) => {
+            const card = document.createElement('div');
+            card.classList.add('card');
 
-        const imgElement = document.createElement('img');
-        imgElement.src = `images/${image}`;
-        imgElement.alt = image;
-        imgElement.classList.add('card-image');
+            const imgElement = document.createElement('img');
+            imgElement.src = `images/${image}`;
+            imgElement.alt = image;
+            imgElement.classList.add('card-image');
 
-        const caption = document.createElement('p');
-        caption.textContent = image;
-        caption.classList.add('card-caption');
+            const caption = document.createElement('p');
+            caption.textContent = image;
+            caption.classList.add('card-caption');
 
-        card.appendChild(imgElement);
-        card.appendChild(caption);
-        gallery.appendChild(card);
-    });
-</script>
+            card.appendChild(imgElement);
+            card.appendChild(caption);
+            gallery.appendChild(card);
+        });
+    </script>
 </body>
 </html>
 
