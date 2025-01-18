@@ -1,1 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>My Photo Gallery</h1>
+    </header>
+    <main>
+        <div class="gallery">
+            <!-- Images will be dynamically loaded here -->
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Your Name</p>
+    </footer>
+    <script>
+        // Dynamically load images from the images directory
+        const gallery = document.querySelector('.gallery');
+        const images = [
+            'photo1.jpg',
+            'photo2.png',
+            'photo3.jpeg'
+            // Add more image filenames here
+        ];
+
+        images.forEach(image => {
+            const imgElement = document.createElement('img');
+            imgElement.src = `images/${image}`;
+            imgElement.alt = image;
+            imgElement.classList.add('gallery-image');
+            gallery.appendChild(imgElement);
+        });
+    </script>
+</body>
+</html>
 
