@@ -6,22 +6,99 @@
     <meta property="og:title" content="MP4 Media Player">
     <meta property="og:description" content="Watch this video directly on Discord or other platforms.">
     <meta property="og:type" content="video.other">
-    <meta property="og:url" content="https://yourdomain.com/videoplayer.html"> <!-- URL of your hosted page -->
-    <meta property="og:video" content="https://yourdomain.com/YOUR_VIDEO_FILE.mp4"> <!-- Link to your MP4 file -->
-    <meta property="og:video:secure_url" content="https://yourdomain.com/YOUR_VIDEO_FILE.mp4">
+    <meta property="og:url" content="https://leelupton.github.io/WebHosting/player/index.html">
+    <meta property="og:video" content="https://leelupton.github.io/WebHosting/videos/Michael_Lee_Lupton.mp4">
+    <meta property="og:video:secure_url" content="https://leelupton.github.io/WebHosting/videos/Michael_Lee_Lupton.mp4">
     <meta property="og:video:type" content="video/mp4">
-    <meta property="og:video:width" content="1280">
-    <meta property="og:video:height" content="720">
+    <meta property="og:video:width" content="1920">
+    <meta property="og:video:height" content="1080">
     <meta property="og:image" content="https://yourdomain.com/thumbnail.jpg"> <!-- Optional thumbnail -->
     <title>MP4 Media Player</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            width: 100%;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .media-player {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+            margin: 20px auto;
+        }
+
+        video {
+            width: 100%;
+            border-radius: 8px;
+        }
+    </style>
 </head>
 <body>
-    <div class="media-player">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="https://leelupton.github.io/WebHosting/index.html">Home</a></li>
+                <li><a href="https://leelupton.github.io/WebHosting/player/index.html">Player</a></li>
+            </ul>
+        </nav>
         <h1>MP4 Media Player</h1>
-        <video controls>
-            <source src="YOUR_VIDEO_FILE.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
+    </header>
+    <main>
+        <div class="media-player">
+            <video controls width="1920" height="1080">
+                <source src="https://leelupton.github.io/WebHosting/videos/Michael_Lee_Lupton.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const video = document.querySelector('video');
+            video.addEventListener('ended', () => {
+                alert('Thank you for watching!');
+            });
+        });
+    </script>
 </body>
 </html>
