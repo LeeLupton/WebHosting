@@ -3,12 +3,24 @@
     "name": "Photo Gallery",
     "description": "Browse sample images in a responsive gallery.",
     "icon": "images/Protecting-Against-Network-Attacks.png",
-    "url": "index.html"
+    "url": "photos.html"
   },
   {
     "name": "MP4 Player",
     "description": "Play a short MP4 video in the browser.",
     "icon": "images/Defender.png",
     "url": "player/index.html"
+  },
+  {
+    "name": "Local Jupyter Lab",
+    "description": "Open your Jupyter Lab running on localhost without a token.",
+    "icon": "images/jupyter_lab.svg",
+    "url": "file:///C:/Users/Lee/AppData/Roaming/jupyter/runtime/jpserver-3260-open.html"
+  },
+  {
+    "name": "lupton.dev",
+    "description": "Lee Lupton's personal website.",
+    "icon": "images/profile.webp",
+    "url": "https://lupton.dev"
   }
 ]
