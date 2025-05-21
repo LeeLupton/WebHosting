@@ -30,7 +30,7 @@
         "Defender.png",
         "profile.webp",
         "Protecting-Against-Network-Attacks.png",
-        "Mantrap.png
+        "Mantrap.png"
     ];
 
     const gallery = document.querySelector('.gallery');
@@ -48,11 +48,12 @@
 
         const imgElement = document.createElement('img');
         imgElement.src = `images/${image}`;
-        imgElement.alt = image;
+        const altText = image.replace(/\.[^.]+$/, '').replace(/-/g, ' ');
+        imgElement.alt = altText;
         imgElement.classList.add('card-image');
 
         const caption = document.createElement('p');
-        caption.textContent = image;
+        caption.textContent = altText;
         caption.classList.add('card-caption');
 
         linkElement.appendChild(imgElement);
