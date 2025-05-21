@@ -1,36 +1,77 @@
 /* General Styles */
+/*
+ * Redesigned layout with a cleaner aesthetic and improved usability.
+ * Colours and spacing are managed through CSS variables.
+ */
+
+:root {
+    --primary-color: #0a9396;
+    --secondary-color: #94d2bd;
+    --background-color: #fdfdfd;
+    --text-color: #333;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+}
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
 }
 
 header {
-    background-color: #444;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: #fff;
-    padding: 1rem;
+    padding: 1.5rem 0;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px var(--card-shadow);
 }
 
-h1 {
-    margin: 0;
-    font-size: 2rem;
+/* Centered navigation using flexbox */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 0;
+    margin: 0 0 1rem 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
     font-weight: bold;
+    transition: opacity 0.2s ease;
 }
 
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
-    padding: 20px;
+nav a:hover {
+    opacity: 0.8;
+}
+
+/* Main content container */
+main {
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Card Styles */
+h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+/* Responsive image grid */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Card styles for image previews */
 .card {
     background: #fff;
     border: 1px solid #ddd;
@@ -38,29 +79,39 @@ h1 {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     text-align: center;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
 .card-image {
     width: 100%;
-    height: 150px; /* Ensures all previews are the same size */
-    object-fit: cover; /* Ensures images fit perfectly */
-    background-color: #f4f4f4; /* Fallback color if image doesn't load */
+    height: 160px;
+    object-fit: cover;
+    background-color: #e9ecef;
 }
 
+/* Caption styling for readability */
 .card-caption {
     margin: 0;
-    padding: 0.5rem;
-    font-size: 0.9rem;
-    color: #666;
-    background: #f9f9f9;
+    padding: 0.75rem;
+    font-size: 1rem;
+    color: var(--text-color);
+    background: var(--secondary-color);
 }
 
 .card-link {
-    text-decoration: none; /* Removes underlines */
+    text-decoration: none;
+}
+
+/* Footer uses primary color for branding */
+footer {
+    background-color: var(--primary-color);
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
 }
