@@ -11,6 +11,15 @@
     --text-color: #333;
     --card-shadow: rgba(0, 0, 0, 0.1);
 }
+
+/* Dark theme overrides */
+[data-theme="dark"] {
+    --primary-color: #0a9396;
+    --secondary-color: #005f73;
+    --background-color: #121212;
+    --text-color: #e5e5e5;
+    --card-shadow: rgba(0, 0, 0, 0.4);
+}
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
     margin: 0;
@@ -21,6 +30,7 @@ body {
 }
 
 header {
+    position: relative;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: #fff;
     padding: 1.5rem 0;
@@ -136,6 +146,19 @@ h1 {
     padding: 0 0.75rem 0.75rem;
     font-size: 0.9rem;
     color: var(--text-color);
+}
+
+/* Theme toggle button */
+.theme-toggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--secondary-color);
+    border: none;
+    color: var(--text-color);
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 /* Footer uses primary color for branding */
