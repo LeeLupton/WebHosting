@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photo Gallery</title>
+    <title>Application Gallery</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -14,53 +14,55 @@
                 <li><a href="https://leelupton.github.io/WebHosting/player/index.html">Player</a></li>
             </ul>
         </nav>
-        <h1>My Photo Gallery</h1>
+        <h1>Application Gallery</h1>
     </header>
     <main>
         <div class="gallery">
-            <!-- Images will be dynamically loaded here -->
+            <!-- Apps will be dynamically loaded here -->
         </div>
     </main>
     <footer>
         <p>&copy; 2025 Lee Lupton</p>
     </footer>
     <script>
-    // Static array of image filenames
-    const images = [
-        "Defender.png",
-        "profile.webp",
-        "Protecting-Against-Network-Attacks.png",
-        "Mantrap.png"
-    ];
-
     const gallery = document.querySelector('.gallery');
 
-    // Dynamically load images into the gallery
-    images.forEach((image) => {
-        const card = document.createElement('div');
-        card.classList.add('card');
+    // Load application data from apps.json and render the gallery
+    fetch('apps.json')
+        .then(response => response.json())
+        .then(apps => {
+            apps.forEach(app => {
+                const card = document.createElement('div');
+                card.classList.add('card');
 
-        // Create a link wrapping the image
-        const linkElement = document.createElement('a');
-        linkElement.href = `images/${image}`; // URL of the image
-        linkElement.target = "_blank"; // Open in a new tab
-        linkElement.classList.add('card-link');
+                const link = document.createElement('a');
+                link.href = app.url;
+                link.classList.add('card-link');
 
-        const imgElement = document.createElement('img');
-        imgElement.src = `images/${image}`;
-        const altText = image.replace(/\.[^.]+$/, '').replace(/-/g, ' ');
-        imgElement.alt = altText;
-        imgElement.classList.add('card-image');
+                const img = document.createElement('img');
+                img.src = app.icon;
+                img.alt = app.name;
+                img.classList.add('card-image');
 
-        const caption = document.createElement('p');
-        caption.textContent = altText;
-        caption.classList.add('card-caption');
+                const title = document.createElement('h2');
+                title.textContent = app.name;
+                title.classList.add('card-title');
 
-        linkElement.appendChild(imgElement);
-        card.appendChild(linkElement);
-        card.appendChild(caption);
-        gallery.appendChild(card);
-    });
+                const description = document.createElement('p');
+                description.textContent = app.description;
+                description.classList.add('card-description');
+
+                link.appendChild(img);
+                link.appendChild(title);
+                link.appendChild(description);
+                card.appendChild(link);
+                gallery.appendChild(card);
+            });
+        })
+        .catch(error => {
+            console.error('Error loading apps:', error);
+            gallery.textContent = 'Failed to load applications.';
+        });
     </script>
 </body>
 </html>
