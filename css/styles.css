@@ -75,10 +75,10 @@ h1 {
     font-weight: 600;
 }
 
-/* Responsive image grid */
+/* Responsive gallery grid */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 2rem;
     padding: 2rem;
     max-width: 1200px;
@@ -119,6 +119,23 @@ h1 {
 
 .card-link {
     text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card-title {
+    margin: 0;
+    padding: 0.5rem 0 0;
+    font-size: 1.2rem;
+}
+
+.card-description {
+    margin: 0;
+    padding: 0 0.75rem 0.75rem;
+    font-size: 0.9rem;
+    color: var(--text-color);
 }
 
 /* Footer uses primary color for branding */

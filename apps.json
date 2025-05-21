@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Photo Gallery",
+    "description": "Browse sample images in a responsive gallery.",
+    "icon": "images/Protecting-Against-Network-Attacks.png",
+    "url": "index.html"
+  },
+  {
+    "name": "MP4 Player",
+    "description": "Play a short MP4 video in the browser.",
+    "icon": "images/Defender.png",
+    "url": "player/index.html"
+  }
+]
