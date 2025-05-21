@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Application</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="https://leelupton.github.io/WebHosting/index.html">Home</a></li>
+                <li><a href="https://leelupton.github.io/WebHosting/player/index.html">Player</a></li>
+                <li><a href="https://leelupton.github.io/WebHosting/add_application.html">Add Application</a></li>
+            </ul>
+        </nav>
+        <h1>Add Application</h1>
+    </header>
+    <main>
+        <form id="applicationForm" class="app-form">
+            <label for="appName">Application Name</label>
+            <input type="text" id="appName" required>
+
+            <label for="version">Version</label>
+            <input type="text" id="version" required>
+
+            <label for="developer">Developer</label>
+            <input type="text" id="developer" required>
+
+            <label for="releaseDate">Release Date</label>
+            <input type="date" id="releaseDate">
+
+            <label for="category">Category</label>
+            <select id="category">
+                <option value="Utility">Utility</option>
+                <option value="Game">Game</option>
+                <option value="Education">Education</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="description">Description</label>
+            <textarea id="description" rows="4"></textarea>
+
+            <label for="icon">Application Icon</label>
+            <input type="file" id="icon">
+
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2025 Lee Lupton</p>
+    </footer>
+    <script>
+        document.getElementById('applicationForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Application submitted!');
+        });
+    </script>
+</body>
+</html>

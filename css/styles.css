@@ -169,3 +169,39 @@ footer {
     padding: 1rem 0;
     margin-top: 2rem;
 }
+
+/* Form styles for Add Application page */
+.app-form {
+    max-width: 600px;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.app-form label {
+    font-weight: bold;
+}
+
+.app-form input,
+.app-form textarea,
+.app-form select {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.app-form button {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.app-form button:hover {
+    opacity: 0.9;
+}
