@@ -15,6 +15,10 @@
             </ul>
         </nav>
         <h1>Application Gallery</h1>
+        <h1>My Photo Gallery</h1>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search...">
+        </div>
     </header>
     <main>
         <div class="gallery">
@@ -63,6 +67,20 @@
             console.error('Error loading apps:', error);
             gallery.textContent = 'Failed to load applications.';
         });
+        linkElement.appendChild(imgElement);
+        card.appendChild(linkElement);
+        card.appendChild(caption);
+        gallery.appendChild(card);
+    });
+
+    const searchInput = document.getElementById('searchInput');
+    searchInput.addEventListener('input', () => {
+        const query = searchInput.value.toLowerCase();
+        document.querySelectorAll('.card').forEach(card => {
+            const text = card.querySelector('.card-caption').textContent.toLowerCase();
+            card.style.display = text.includes(query) ? '' : 'none';
+        });
+    });
     </script>
 </body>
 </html>

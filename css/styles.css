@@ -49,6 +49,20 @@ nav a:hover {
     opacity: 0.8;
 }
 
+/* Search bar positioning */
+.search-container {
+    margin-top: 1rem;
+}
+
+.search-container input {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 80%;
+    max-width: 400px;
+}
+
 /* Main content container */
 main {
     max-width: 1200px;
