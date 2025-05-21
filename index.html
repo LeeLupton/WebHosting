@@ -8,6 +8,7 @@
 </head>
 <body>
     <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">Dark Mode</button>
         <nav>
             <ul>
                 <li><a href="https://leelupton.github.io/WebHosting/index.html">Home</a></li>
@@ -62,5 +63,23 @@
         gallery.appendChild(card);
     });
     </script>
-</body>
+    <script>
+    const themeToggleBtn = document.getElementById('theme-toggle');
+
+    function setTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        themeToggleBtn.textContent = theme === 'dark' ? 'Light Mode' : 'Dark Mode';
+    }
+
+    const storedTheme = localStorage.getItem('theme') || 'light';
+    setTheme(storedTheme);
+
+    themeToggleBtn.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('data-theme') || 'light';
+        const newTheme = current === 'light' ? 'dark' : 'light';
+        setTheme(newTheme);
+    });
+    </script>
+  </body>
 </html>
