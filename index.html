@@ -12,6 +12,7 @@
         <nav>
             <ul>
                 <li><a href="https://leelupton.github.io/WebHosting/index.html">Home</a></li>
+                <li><a href="https://leelupton.github.io/WebHosting/photos.html">Photos</a></li>
                 <li><a href="https://leelupton.github.io/WebHosting/player/index.html">Player</a></li>
                 <li><a href="https://leelupton.github.io/WebHosting/add_application.html">Add Application</a></li>
             </ul>
@@ -69,11 +70,6 @@
             console.error('Error loading apps:', error);
             gallery.textContent = 'Failed to load applications.';
         });
-        linkElement.appendChild(imgElement);
-        card.appendChild(linkElement);
-        card.appendChild(caption);
-        gallery.appendChild(card);
-    });
 
     const searchInput = document.getElementById('searchInput');
     searchInput.addEventListener('input', () => {
